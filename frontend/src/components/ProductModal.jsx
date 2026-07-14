@@ -132,20 +132,20 @@ const ProductModal = ({ mode, product, onClose }) => {
     mode === "create" ? "Add New Product" : isViewOnly ? "Product Details" : "Edit Product";
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-900/50 p-4">
-      <div className="max-h-[92vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white shadow-2xl">
-        <div className="sticky top-0 flex items-center justify-between border-b border-slate-100 bg-white px-6 py-4">
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-900/50 p-0 sm:p-4">
+      <div className="flex h-full w-full max-w-xl flex-col overflow-y-auto bg-white shadow-2xl sm:h-auto sm:max-h-[92vh] sm:rounded-2xl">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white px-4 py-3.5 sm:px-6 sm:py-4">
           <h2 className="text-base font-bold text-slate-900">{title}</h2>
           <button onClick={onClose} className="btn-icon text-slate-400 hover:bg-slate-100">
             <HiOutlineXMark className="h-5 w-5" />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5 px-6 py-5">
+        <form onSubmit={handleSubmit} className="flex-1 space-y-5 px-4 py-5 sm:px-6">
           {/* Image section */}
           <div>
             <span className="label">Product Image</span>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <button
                 type="button"
                 onClick={() => imagePreview && setShowLightbox(true)}
@@ -265,7 +265,7 @@ const ProductModal = ({ mode, product, onClose }) => {
             />
           </div>
 
-          <div className="flex justify-end gap-3 pt-2">
+          <div className="sticky bottom-0 -mx-4 flex flex-col-reverse gap-3 border-t border-slate-100 bg-white px-4 pb-4 pt-4 sm:static sm:mx-0 sm:flex-row sm:justify-end sm:border-0 sm:bg-transparent sm:px-0 sm:pb-0 sm:pt-2">
             {isViewOnly ? (
               <button type="button" onClick={onClose} className="btn-secondary">
                 Close

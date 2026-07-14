@@ -69,8 +69,8 @@ const CameraCapture = ({ onCapture, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
-      <div className="w-full max-w-lg overflow-hidden rounded-2xl bg-slate-900 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-0 sm:p-4">
+      <div className="flex h-full w-full max-w-lg flex-col overflow-hidden bg-slate-900 shadow-2xl sm:h-auto sm:rounded-2xl">
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
           <h3 className="text-sm font-semibold text-white">Capture Product Photo</h3>
           <button
@@ -81,7 +81,7 @@ const CameraCapture = ({ onCapture, onClose }) => {
           </button>
         </div>
 
-        <div className="relative aspect-[4/3] w-full bg-black">
+        <div className="relative w-full flex-1 bg-black sm:aspect-[4/3] sm:flex-none">
           {error ? (
             <div className="flex h-full items-center justify-center p-6 text-center text-sm text-red-300">
               {error}
@@ -96,7 +96,7 @@ const CameraCapture = ({ onCapture, onClose }) => {
           )}
         </div>
 
-        <div className="flex items-center justify-center gap-4 px-4 py-4">
+        <div className="flex items-center justify-center gap-4 px-4 py-5 sm:py-4">
           <button
             onClick={flipCamera}
             className="btn-icon bg-white/10 text-white hover:bg-white/20"

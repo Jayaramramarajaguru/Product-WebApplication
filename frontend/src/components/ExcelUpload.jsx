@@ -20,7 +20,7 @@ const ExcelUpload = () => {
   };
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex flex-1 items-center gap-3 sm:flex-none">
       <input
         ref={fileInputRef}
         type="file"
@@ -31,10 +31,12 @@ const ExcelUpload = () => {
       />
       <label
         htmlFor="excel-upload-input"
-        className="btn-secondary cursor-pointer"
+        className="btn-secondary w-full cursor-pointer whitespace-nowrap sm:w-auto"
       >
-        <HiOutlineDocumentArrowUp className="h-4 w-4" />
-        {importMutation.isPending ? `Importing ${fileName}...` : "Import Excel"}
+        <HiOutlineDocumentArrowUp className="h-4 w-4 shrink-0" />
+        <span className="truncate">
+          {importMutation.isPending ? `Importing...` : "Import Excel"}
+        </span>
       </label>
     </div>
   );
