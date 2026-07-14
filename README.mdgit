@@ -1,0 +1,1 @@
+"# Product-WebApplication"  initgit add README.mdgit commit -m "first commit"git branch -M maingit remote add origin https://github.com/Jayaramramarajaguru/Product-WebApplication.gitgit push -u origin main
